@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+body{
+font-family: 'Kanit', sans-serif;
+text-align:center;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+margin:0;
+
+/* พื้นหลังพาสเทลสวยๆ */
+background: linear-gradient(135deg,#ffd1dc,#ffe4e1,#ffc0cb);
+background-size: 400% 400%;
+animation:bgMove 10s infinite alternate;
+
+overflow:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+
+h1,h2{
+color:#ff2e63;
+text-shadow:0 3px 10px rgba(255,0,100,0.2);
+}
+
+/* ---------------- กล่องของขวัญ ---------------- */
+.gift{
+width:280px;
+height:240px;
+background:linear-gradient(145deg,#ff4d88,#ff1f6b);
+border-radius:25px;
+position:relative;
+cursor:pointer;
+margin:20px;
+box-shadow:0 20px 40px rgba(255,0,90,0.4);
+transition:0.3s;
+}
+
+.gift:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.lid{
+position:absolute;
+top:-80px;
+width:300px;
+height:90px;
+left:-10px;
+background:linear-gradient(145deg,#ff66a3,#ff3385);
+border-radius:25px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.ribbon-v{
+width:45px;
+height:240px;
+background:white;
+left:118px;
+position:absolute;
+border-radius:10px;
+}
+
+.ribbon-h{
+height:45px;
+width:280px;
+background:white;
+top:95px;
+position:absolute;
+border-radius:10px;
+}
+
+.bow{
+position:absolute;
+top:-50px;
+left:50%;
+transform:translateX(-50%);
+font-size:45px;
+}
+
+/* ---------------- ปุ่ม ---------------- */
+.open-btn{
+padding:14px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff4d88,#ff2e63);
+color:white;
+cursor:pointer;
+margin-top:15px;
+box-shadow:0 8px 20px rgba(255,0,90,0.3);
+transition:0.25s;
+}
+
+.open-btn:hover{
+transform:scale(1.1);
+box-shadow:0 12px 25px rgba(255,0,90,0.5);
+}
+
+/* ---------------- ช่องใส่รหัส ---------------- */
+.code-inputs{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.code-inputs input{
+width:55px;
+height:55px;
+font-size:24px;
+text-align:center;
+border-radius:15px;
+border:none;
+outline:none;
+background:#fff0f5;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.2s;
+}
+
+.code-inputs input:focus{
+transform:scale(1.15);
+background:white;
+box-shadow:0 5px 20px rgba(255,0,120,0.3);
+}
+
+/* ---------------- ดอกไม้ใหญ่ ---------------- */
+.flower-box{
+margin:20px;
+}
+
+/* รูปดอกไม้ */
+.big-flower{
+width:220px;
+animation:pulse 2s infinite;
+filter:drop-shadow(0 0 25px pink);
+border-radius:20px;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.15);}
+100%{transform:scale(1);}
+}
+
+
+/* ---------------- พลุ ---------------- */
+.firework{
+position:absolute;
+font-size:35px;
+animation:boom 1.6s linear forwards;
+}
+
+@keyframes boom{
+0%{transform:scale(0);opacity:1;}
+100%{transform:scale(4);opacity:0;}
+}
+
+/* ---------------- เกม ---------------- */
+#question{
+font-size:26px;
+margin-bottom:20px;
+color:#d63384;
+}
+
+#answers button{
+display:block;
+margin:10px auto;
+}
+
+/* ---------------- ข้อความแจ้ง ---------------- */
+#msg{
+font-size:20px;
+color:red;
+margin-top:10px;
+}
+
+/* ซองจดหมาย */
+.envelope{
+font-size:80px;
+cursor:pointer;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* ---------- POPUP น่ารัก ---------- */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,192,203,0.35);
+backdrop-filter: blur(5px);
+justify-content:center;
+align-items:center;
+z-index:99;
+}
+
+.popup-content{
+background: linear-gradient(145deg,#fff0f6,#ffe4ec);
+padding:35px;
+border-radius:30px;
+text-align:center;
+max-width:320px;
+box-shadow:0 10px 40px rgba(255,105,180,0.4);
+animation:popCute 0.5s ease;
+position:relative;
+}
+
+/* เด้งนุ่มๆ */
+@keyframes popCute{
+0%{transform:scale(0.5);opacity:0;}
+70%{transform:scale(1.1);}
+100%{transform:scale(1);opacity:1;}
+}
+
+/* หัวใจลอย */
+.popup-content::before{
+content:"💖 💕 💗";
+position:absolute;
+top:-25px;
+left:50%;
+transform:translateX(-50%);
+font-size:22px;
+animation:floatHearts 2s infinite;
+}
+
+@keyframes floatHearts{
+0%{transform:translateX(-50%) translateY(0);}
+50%{transform:translateX(-50%) translateY(-10px);}
+100%{transform:translateX(-50%) translateY(0);}
+}
+
+/* ปุ่มใน popup */
+.popup-content button{
+background:linear-gradient(45deg,#ff6fa5,#ff3d7f);
+border:none;
+padding:12px 25px;
+border-radius:25px;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+box-shadow:0 5px 15px rgba(255,20,147,0.4);
+transition:0.25s;
+}
+
+.popup-content button:hover{
+transform:scale(1.1);
+}
+
+/* ข้อความ */
+.popup-content h2{
+color:#ff2e63;
+margin-bottom:10px;
+}
+
+.popup-content p{
+color:#d63384;
+font-size:18px;
+line-height:1.6;
+}
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-80vh);opacity:0;}
+}

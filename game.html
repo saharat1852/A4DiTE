@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Game</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h2>💘 เกมทายใจ 💘</h2>
+
+<div id="question"></div>
+<div id="answers"></div>
+
+<!-- ซองจดหมาย -->
+<div id="loveBox" style="display:none;">
+  <div class="envelope" onclick="openLove()">
+    💌
+  </div>
+  <p>กดซองจดหมายสิ 💖</p>
+</div>
+
+<!-- Popup ข้อความรัก -->
+<div id="lovePopup" class="popup">
+  <div class="popup-content">
+    <h2>💖 ถึงคนพิเศษ 💖</h2>
+    <p>
+      ขอบคุณที่อยู่ด้วยกันนะ<br>
+      เค้ารักเธอมากๆเลย 💕<br>
+      อยู่ด้วยกันแบบนี้ตลอดไปนะ 🥰
+    </p>
+    <button onclick="closeLove()" class="open-btn">ปิด</button>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
